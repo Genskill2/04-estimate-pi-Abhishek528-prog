@@ -38,6 +38,27 @@ int main(void) {
     }
   }
 }
-
+float mc_pi(int j)
+{
+  int c_points=0;
+  float pi=1;
+  
+  float x=frandom();
+  float y=frandom();
+  
+  double d=(pow(x,2)+pow(y,2));
+  for(int i=1;i<=j;i++)
+  {
+    float x=frandom();
+    float y=frandom();
+  
+    double d=(pow(x,2)+pow(y,2));
+    if(d<=1)
+      {c_points=c_points+1;}
+    pi=4*((float)c_points/(float)i);
+    //printf("%f\n",pi);  }
+    }
+  return pi;
+}
 
 
