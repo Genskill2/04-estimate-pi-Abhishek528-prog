@@ -3,29 +3,8 @@
 #include <stdio.h>
 #include <math.h>
 
+float mc_pi (int);
 
-float mc_pi(int j);
-{
-  int c_points=0;
-  float pi=1;
-  
-  float x=frandom();
-  float y=frandom();
-  
-  double d=(pow(x,2)+pow(y,2));
-  for(int i=1;i<=j;i++)
-  {
-    float x=frandom();
-    float y=frandom();
-  
-    double d=(pow(x,2)+pow(y,2));
-    if(d<=1)
-      {c_points=c_points+1;}
-    pi=4*((float)c_points/(float)i);
-    //printf("%f\n",pi);  }
-    }
-  return pi;
-}
 
 
 float frandom() {
@@ -48,7 +27,7 @@ int main(void) {
     }
 
   if (fabs(pi0 - pi1) > 0.05) {
-      printf("Two separate estimates %f and %f are too different.\n", pi0, pi1);
+      printf("Two separate estimat %f are too different.\n", pi0, pi1);
       abort();
   }
 
@@ -62,5 +41,26 @@ int main(void) {
   }
 }
 
-
+float mc_pi(int j)
+{
+  int c_points=0;
+  float pi=1;
+  
+  float x=frandom();
+  float y=frandom();
+  
+  double d=(pow(x,2)+pow(y,2));
+  for(int i=1;i<=j;i++)
+  {
+    float x=frandom();
+    float y=frandom();
+  
+    double d=(pow(x,2)+pow(y,2));
+    if(d<=1)
+      {c_points=c_points+1;}
+    pi=4*((float)c_points/(float)i);
+    //printf("%f\n",pi);  }
+    }
+  return pi;
+}
 
