@@ -4,7 +4,7 @@
 #include <math.h>
 
 
-float mc_pi(int j)
+float mc_pi(int j);
 {
   int c_points=0;
   float pi=1;
